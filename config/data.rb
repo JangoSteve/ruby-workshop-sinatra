@@ -23,3 +23,6 @@
 #   end
 #   tour.save
 # end
+
+class User < Sequel::Model
+end

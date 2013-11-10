@@ -25,3 +25,11 @@
 #     foreign_key :tour_id, :tours
 #   end
 # end
+migration "create the users table" do
+  database.create_table :users do
+    primary_key :id
+    DateTime :created_at
+    String :name
+    String :email
+  end
+end

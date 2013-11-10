@@ -12,7 +12,13 @@ require './config/init.rb'
 
 # Quick test
 get '/' do
+  @users = User.all
   haml :index
+end
+
+post '/user' do
+  @user = User.create(:name => params[:name], :email => params[:email])
+  redirect to('/')
 end
 
 # Test at <appname>.heroku.com

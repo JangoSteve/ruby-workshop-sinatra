@@ -1,3 +1,17 @@
 %h1 Hello there
 %p
   I'll be your "hello world", today.
+- if @users.any?
+  %ul
+    - @users.each do |user|
+      %li
+        = "Name: #{user.name}, Email: #{user.email}"
+- else
+  %p No users
+
+%form{:action => '/user', :method => 'POST'}
+  %label Name
+  %input{:name => 'name'}
+  %label Email
+  %input{:name => 'email'}
+  %input{:type => 'submit', :value => "Create User"}
